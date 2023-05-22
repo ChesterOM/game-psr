@@ -1,34 +1,71 @@
 
+let score = 0
 
 
 
-
-function playRound(){
+function playRock(){
 
     const computerChoice = getComputerChoice();
-    const userChoice = getUserChoice();
+    const userChoice = 'rock';
 
     console.log(computerChoice);
     console.log(userChoice);
 
         if (computerChoice == userChoice) {
-            return 'Draw!, Try Again'
-        } else if (userChoice == 'rock' && computerChoice == 'paper'){
+            console.log( 'Draw!, Try Again')
+        } else if (computerChoice == 'paper'){
             score --
-            return 'You Lose ' + (computerChoice) + ' beats ' + (userChoice)
-        } else if (userChoice == 'paper' && computerChoice == 'scissor'){
-            score --
-            return 'You Lose ' + (computerChoice) + ' beats ' + (userChoice)
-        } else if (userChoice == 'scissors' && computerChoice == 'rock'){
-            score--
-            return 'You Lose ' + (computerChoice) + ' beats ' + (userChoice)
+            console.log( 'You Lose ' + (computerChoice) + ' beats ' + (userChoice))
         } else {
-            score++ 
-            return 'You Win ' + (userChoice) + ' beats ' + (computerChoice)
+            score++
+            console.log( 'You Win ' + (userChoice) + ' beats ' + (computerChoice))   
         }
-
+        console.log(score)
          }
-// create a function that will have computer select P S or R
+
+
+function playPaper(){
+
+    const computerChoice = getComputerChoice();
+    const userChoice = 'paper';
+
+    console.log(computerChoice);
+    console.log(userChoice);
+
+        if (computerChoice == userChoice) {
+            console.log( 'Draw!, Try Again')
+        } else if (computerChoice == 'scissors'){
+            score --
+            console.log( 'You Lose ' + (computerChoice) + ' beats ' + (userChoice))
+        } else {
+            score++
+            console.log( 'You Win ' + (userChoice) + ' beats ' + (computerChoice))   
+        }
+        console.log(score)
+         }
+
+function playScissors(){
+
+        const computerChoice = getComputerChoice();
+        const userChoice = 'scissors';
+
+        console.log(computerChoice);
+        console.log(userChoice);
+    
+            if (computerChoice == userChoice) {
+                console.log( 'Draw!, Try Again')
+            } else if (computerChoice == 'rock'){
+                score --
+                console.log( 'You Lose ' + (computerChoice) + ' beats ' + (userChoice))
+            } else {
+                score++
+                console.log( 'You Win ' + (userChoice) + ' beats ' + (computerChoice))   
+            }
+            console.log(score)
+             }             
+         
+         
+             // create a function that will have computer select P S or R
 function getComputerChoice (){
    let randomnumber = Math.floor(Math.random() * (3 - 1 + 1)+ 1);
    
@@ -44,35 +81,39 @@ function getComputerChoice (){
 
 // create function to prompt user for their game input
 function getUserChoice(){
-    return prompt('Paper,Scissors or Rock?','').toLowerCase();
+
 }
-
-
 
 function game(){
-    console.log(playRound())
-    console.log(score)
-    console.log(playRound())
-    console.log(score)
-    console.log(playRound())
-    console.log(score)
-    console.log(playRound())
-    console.log(score)
-    console.log(playRound())
-    console.log(score)
 
-    if (score = 0){
-        return 'Draw!'
-    } else if (score > 0){
-        return 'You Win!'
-    } else {
-        return 'You Lose!'
-    }
 }
 
+document.getElementById('rock').addEventListener('click', playRock)
 
-let score = 0
-console.log(game())
+document.getElementById('paper').addEventListener('click', playPaper)
+
+document.getElementById('scissors').addEventListener('click', playScissors)
+
+
+
+
+
+
+
+//     if (score = 0){
+//         return 'Draw!'
+//    } else if (score > 0){
+//         return 'You Win!'
+//     } else {
+//         return 'You Lose!'
+//  }
+
+
+
+
+
+    
+
 
 
 
